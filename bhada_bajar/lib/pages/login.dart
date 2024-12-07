@@ -1,21 +1,20 @@
-import 'package:first_project/controllers/login_controller.dart';
-import 'package:first_project/pages/register.dart';
+
+import 'package:bhada_bajar/pages/register.dart';
 import 'package:flutter/material.dart';
-import 'package:get/instance_manager.dart';
+
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    var controller = Get.put(LoginController());
 
     return Scaffold(
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Form(
-            key: controller.loginFormKey,
+  
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -30,7 +29,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  controller: controller.emailController,
+                  
                   decoration: const InputDecoration(
                     labelText: "Email Address",
                     border: OutlineInputBorder(),
@@ -44,7 +43,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
                 TextFormField(
-                  controller: controller.passwordController,
+              
                   obscureText: true,
                   validator: (value) {
                     if (value?.isEmpty ?? true) {
@@ -60,13 +59,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: controller.login,
-                  // style: ElevatedButton.styleFrom(
-                  //   backgroundColor: Colors.red,
-                  // ),
-                  child: const Text('Login'),
-                ),
+             
                 const SizedBox(height: 20),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
